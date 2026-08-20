@@ -1,6 +1,10 @@
 name: CD - Deploy to Kind
 
 on:
+  push:
+    branches:
+      - main
+
   workflow_dispatch:
 
 jobs:
