@@ -1,0 +1,17 @@
+{{- if .Values.openWebUI.persistence.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "ai-platform.fullname" . }}-open-webui-pvc
+  namespace: {{ .Values.namespace }}
+
+spec:
+  accessModes:
+    - ReadWriteOnce
+
+  storageClassName: {{ .Values.openWebUI.persistence.storageClass }}
+
+  resources:
+    requests:
+      storage: {{ .Values.openWebUI.persistence.size }}
+{{- end }}

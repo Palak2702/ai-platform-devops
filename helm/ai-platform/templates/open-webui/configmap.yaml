@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "ai-platform.fullname" . }}-open-webui-config
+  namespace: {{ .Values.namespace }}
+
+data:
+  OLLAMA_BASE_URL: {{ .Values.openWebUI.ollamaBaseUrl | quote }}

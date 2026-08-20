@@ -1,0 +1,59 @@
+namespace: ai-platform
+
+ollama:
+  replicaCount: 1
+
+  image:
+    repository: ollama/ollama
+    tag: latest
+    pullPolicy: IfNotPresent
+
+  service:
+    type: ClusterIP
+    port: 11434
+
+  persistence:
+    enabled: true
+    size: 10Gi
+    storageClass: standard
+
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1Gi
+    limits:
+      cpu: "2"
+      memory: 3Gi
+
+
+openWebUI:
+  replicaCount: 1
+
+  image:
+    repository: ghcr.io/open-webui/open-webui
+    tag: main
+    pullPolicy: IfNotPresent
+
+  service:
+    type: NodePort
+    port: 80
+    targetPort: 8080
+    nodePort: 31311
+
+  persistence:
+    enabled: true
+    size: 5Gi
+    storageClass: standard
+
+  resources:
+    requests:
+      cpu: 250m
+      memory: 512Mi
+    limits:
+      cpu: "1"
+      memory: 1Gi
+
+  ollamaBaseUrl: "http://ollama:11434"
+
+  secret:
+    authSecretKey: "local-dev-secret-change-me"

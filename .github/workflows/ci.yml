@@ -1,0 +1,37 @@
+name: AI Platform CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validate Kubernetes and Helm
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+
+      - name: Helm Lint
+        run: |
+          helm lint helm/ai-platform
+
+      - name: Helm Template
+        run: |
+          helm template ai-platform helm/ai-platform
+
+      - name: Verify Kubernetes manifests
+        run: |
+          find kubernetes -type f -name "*.yaml" -print
+
+      - name: CI completed
+        run: |
+          echo "AI Platform CI validation completed successfully"

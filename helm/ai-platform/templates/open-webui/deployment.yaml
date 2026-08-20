@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: {{ include "ai-platform.fullname" . }}-open-webui
+  namespace: {{ .Values.namespace }}
+
+  labels:
+    app: open-webui
+
+spec:
+  replicas: {{ .Values.openWebUI.replicaCount }}
+
+  selector:
+    matchLabels:
+      app: open-webui
+
+  template:
+    metadata:
+      labels:
+        app: open-webui
+
+    spec:
+      containers:
+        - name: open-webui
+
+          image: "{{ .Values.openWebUI.image.repository }}:{{ .Values.openWebUI.image.tag }}"
+          imagePullPolicy: {{ .Values.openWebUI.image.pullPolicy }}
+
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+
+          env:
+            - name: OLLAMA_BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "ai-platform.fullname" . }}-open-webui-config
+                  key: OLLAMA_BASE_URL
+
+            - name: WEBUI_AUTH_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "ai-platform.fullname" . }}-open-webui-secret
+                  key: WEBUI_AUTH_SECRET_KEY
+
+          resources:
+            {{- toYaml .Values.openWebUI.resources | nindent 12 }}
+
+          volumeMounts:
+            - name: open-webui-storage
+              mountPath: /app/backend/data
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 3
+
+      volumes:
+        - name: open-webui-storage
+          persistentVolumeClaim:
+            claimName: {{ include "ai-platform.fullname" . }}-open-webui-pvc
