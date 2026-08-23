@@ -1,0 +1,4007 @@
+[2026-08-20 09:05:40Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.credentials'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known config file 'Runner': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.runner'
+[2026-08-20 09:05:40Z INFO Worker] Version: 2.336.0
+[2026-08-20 09:05:40Z INFO Worker] Commit: 98aabcd429c4e8402406c56ce2d26387fed3b9ce
+[2026-08-20 09:05:40Z INFO Worker] Culture: en-US
+[2026-08-20 09:05:40Z INFO Worker] UI Culture: en-US
+[2026-08-20 09:05:40Z INFO Worker] Waiting to receive the job message from the channel.
+[2026-08-20 09:05:40Z INFO ProcessChannel] Receiving message of length 22162, with hash 'ccccab634ec55b00b3f68ed95950c2913c64e066252fa5a757a9745a60a07396'
+[2026-08-20 09:05:40Z INFO Worker] Message received.
+[2026-08-20 09:05:40Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/cd.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v4",
+        "repositoryType": "GitHub"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 11,
+        "col": 15,
+        "lit": "Checkout repository"
+      },
+      "contextName": "__actions_checkout",
+      "condition": "success()",
+      "id": "3ea5d8da-4ce9-4892-95b1-73cb9705d815",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 14,
+        "col": 15,
+        "lit": "Check Kubernetes"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 15,
+              "col": 14,
+              "lit": "kubectl get nodes"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "7e9ce770-ce3c-4056-99d8-23ef2e49752b",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 17,
+        "col": 15,
+        "lit": "Check Helm"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 18,
+              "col": 14,
+              "lit": "helm version"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "5d3bc7fe-eccc-45b3-961c-2d7f081dc535",
+      "name": "__run_2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 20,
+        "col": 15,
+        "lit": "Check Kind cluster"
+      },
+      "contextName": "__run_3",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 21,
+              "col": 14,
+              "lit": "kind get clusters"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "6c30fbe3-e791-40b8-9c2a-31e6e8f1faed",
+      "name": "__run_3"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 23,
+        "col": 15,
+        "lit": "Helm lint"
+      },
+      "contextName": "__run_4",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 24,
+              "col": 14,
+              "lit": "helm lint helm/ai-platform"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "00401bd1-c256-4034-a166-300838de73e0",
+      "name": "__run_4"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 26,
+        "col": 15,
+        "lit": "Deploy application"
+      },
+      "contextName": "__run_5",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 27,
+              "col": 14,
+              "lit": "helm upgrade --install ai-platform helm/ai-platform `\n  --namespace ai-platform `\n  --create-namespace\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "11cacd14-a18d-42f7-8ece-326c0a931a6b",
+      "name": "__run_5"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 32,
+        "col": 15,
+        "lit": "Verify deployment"
+      },
+      "contextName": "__run_6",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 33,
+              "col": 14,
+              "lit": "kubectl get pods -n ai-platform"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "ae579af7-26e7-40e4-bdf3-0bf3662886ad",
+      "name": "__run_6"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions.runner.requirenode24": {
+      "value": "false"
+    },
+    "actions.runner.usenode24bydefault": {
+      "value": "true"
+    },
+    "actions.runner.warnonnode20": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "true"
+    },
+    "actions_batch_action_resolution": {
+      "value": "false"
+    },
+    "actions_container_action_runner_temp": {
+      "value": "true"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_runner_allow_artifacts_file": {
+      "value": "false"
+    },
+    "actions_runner_compare_workflow_parser": {
+      "value": "false"
+    },
+    "actions_runner_deprecate_linux_arm32": {
+      "value": "true"
+    },
+    "actions_runner_emit_composite_markers": {
+      "value": "true"
+    },
+    "actions_runner_kill_linux_arm32": {
+      "value": "false"
+    },
+    "actions_runner_node20_removal_date": {
+      "value": ""
+    },
+    "actions_runner_node24_default_date": {
+      "value": "June 16th, 2026"
+    },
+    "actions_self_repository": {
+      "value": "true"
+    },
+    "actions_service_container_command": {
+      "value": "true"
+    },
+    "actions_set_orchestration_id_env_for_actions": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_snapshot_preflight_hosted_runner_check": {
+      "value": "false"
+    },
+    "actions_snapshot_preflight_image_gen_pool_check": {
+      "value": "false"
+    },
+    "actions_use_bearer_token_for_codeload": {
+      "value": "false"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "deploy"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.orchestrationId": {
+      "value": "504f5842-ba72-493d-9ed8-ae75df2fd470.deploy.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "deploy"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "504f5842-ba72-493d-9ed8-ae75df2fd470",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "504f5842-ba72-493d-9ed8-ae75df2fd470",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "de238cd2-e06a-563e-868f-0e60d1cf7e19",
+  "jobDisplayName": "deploy",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/WM8My6qV6Ov3ee815KjQl14aRpWd8xxEkmAOY9qIKJbDtr1V4M/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/WM8My6qV6Ov3ee815KjQl14aRpWd8xxEkmAOY9qIKJbDtr1V4M/",
+          "GenerateIdTokenUrl": "",
+          "ConnectivityChecks": "[\"https://broker.actions.githubusercontent.com/health\",\"https://token.actions.githubusercontent.com/ready\",\"https://run.actions.githubusercontent.com/health\"]",
+          "ConnectivityAndDNSChecks": ""
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-3-azure-eastus.actions.githubusercontent.com/12/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "bb4234a7cef918b8e822c5f139cef6ccbde9492b"
+        },
+        {
+          "k": "repository",
+          "v": "Palak2702/ai-platform-devops"
+        },
+        {
+          "k": "repository_owner",
+          "v": "Palak2702"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "127179881"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/Palak2702/ai-platform-devops.git"
+        },
+        {
+          "k": "run_id",
+          "v": "32352100863"
+        },
+        {
+          "k": "run_number",
+          "v": "2"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "127179881"
+        },
+        {
+          "k": "actor",
+          "v": "Palak2702"
+        },
+        {
+          "k": "workflow",
+          "v": "CD - Deploy to Kind"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "workflow_dispatch"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "workflow",
+                "v": ".github/workflows/cd.yml"
+              },
+              {
+                "k": "inputs",
+                "v": null
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "id",
+                      "v": 1340360828.0
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOT-RIfA"
+                    },
+                    {
+                      "k": "name",
+                      "v": "ai-platform-devops"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "Palak2702/ai-platform-devops"
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "login",
+                            "v": "Palak2702"
+                          },
+                          {
+                            "k": "id",
+                            "v": 127179881.0
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "U_kgDOB5ScaQ"
+                          },
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/127179881?v=4"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/Palak2702"
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/Palak2702"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/Palak2702/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/Palak2702/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/Palak2702/gists{/gist_id}"
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/Palak2702/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/Palak2702/subscriptions"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/Palak2702/orgs"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/Palak2702/repos"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/Palak2702/events{/privacy}"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/Palak2702/received_events"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/Palak2702/ai-platform-devops"
+                    },
+                    {
+                      "k": "description",
+                      "v": "ai-platform-devops"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops"
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/forks"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/keys{/key_id}"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/teams"
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/hooks"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/issues/events{/number}"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/events"
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/assignees{/user}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/branches{/branch}"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/tags"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/git/refs{/sha}"
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/git/trees{/sha}"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/statuses/{sha}"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/languages"
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/stargazers"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/contributors"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/subscription"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/commits{/sha}"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/git/commits{/sha}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/comments{/number}"
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/issues/comments{/number}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/contents/{+path}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/merges"
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/downloads"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/issues{/number}"
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/pulls{/number}"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/milestones{/number}"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/labels{/name}"
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/releases{/id}"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/Palak2702/ai-platform-devops/deployments"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": "2026-08-20T06:25:01Z"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2026-08-20T08:54:57Z"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": "2026-08-20T08:52:58Z"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/Palak2702/ai-platform-devops.git"
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:Palak2702/ai-platform-devops.git"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/Palak2702/ai-platform-devops.git"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/Palak2702/ai-platform-devops"
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "size",
+                      "v": 8.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "language",
+                      "v": "Go Template"
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": false
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    },
+                    {
+                      "k": "has_pull_requests",
+                      "v": true
+                    },
+                    {
+                      "k": "pull_request_creation_policy",
+                      "v": "all"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "login",
+                      "v": "Palak2702"
+                    },
+                    {
+                      "k": "id",
+                      "v": 127179881.0
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDOB5ScaQ"
+                    },
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/127179881?v=4"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/Palak2702"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/Palak2702"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/Palak2702/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/Palak2702/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/Palak2702/gists{/gist_id}"
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/Palak2702/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/Palak2702/subscriptions"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/Palak2702/orgs"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/Palak2702/repos"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/Palak2702/events{/privacy}"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/Palak2702/received_events"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "Palak2702/ai-platform-devops/.github/workflows/cd.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "bb4234a7cef918b8e822c5f139cef6ccbde9492b"
+        },
+        {
+          "k": "repository_id",
+          "v": "1340360828"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "Palak2702"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "job": {
+      "t": 2,
+      "d": [
+        {
+          "k": "check_run_id",
+          "v": 96373300281.0
+        },
+        {
+          "k": "workflow_ref",
+          "v": "Palak2702/ai-platform-devops/.github/workflows/cd.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "bb4234a7cef918b8e822c5f139cef6ccbde9492b"
+        },
+        {
+          "k": "workflow_repository",
+          "v": "Palak2702/ai-platform-devops"
+        },
+        {
+          "k": "workflow_file_path",
+          "v": ".github/workflows/cd.yml"
+        }
+      ]
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOB5ScaQ"
+}
+[2026-08-20 09:05:40Z INFO JobRunner] Job ID de238cd2-e06a-563e-868f-0e60d1cf7e19
+[2026-08-20 09:05:40Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin\Runner.Worker.dll
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO ConfigurationStore] binPath: C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO ConfigurationStore] RootFolder: C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known config file 'Runner': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.runner'
+[2026-08-20 09:05:40Z INFO ConfigurationStore] ConfigFilePath: C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.runner
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.runner_migrated'
+[2026-08-20 09:05:40Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.runner_migrated
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.credentials'
+[2026-08-20 09:05:40Z INFO ConfigurationStore] CredFilePath: C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.credentials
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.credentials_migrated'
+[2026-08-20 09:05:40Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.credentials_migrated
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known config file 'Service': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.service'
+[2026-08-20 09:05:40Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.service
+[2026-08-20 09:05:40Z INFO ConfigurationStore] Read setting file: 404 chars
+[2026-08-20 09:05:40Z INFO JobRunner] Initializing launch client
+[2026-08-20 09:05:40Z INFO JobServerQueue] Initializing results client
+[2026-08-20 09:05:40Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2026-08-20 09:05:40Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2026-08-20 09:05:40Z INFO JobServerQueue] Start process web console line queue.
+[2026-08-20 09:05:40Z INFO JobServerQueue] Start process file upload queue.
+[2026-08-20 09:05:40Z INFO JobServerQueue] Start results file upload queue.
+[2026-08-20 09:05:40Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-08-20 09:05:40Z INFO JobServerQueue] Start process timeline update queue.
+[2026-08-20 09:05:40Z INFO ExecutionContext] Initializing Job context
+[2026-08-20 09:05:40Z INFO ExecutionContext] Initialize GitHub context
+[2026-08-20 09:05:40Z INFO ExecutionContext] Initialize Env context
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:40Z INFO JobRunner] Starting the job execution context.
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:40Z INFO JobRunner] Validating directory permissions for: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Tools': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_tool'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:40Z INFO JobRunner] Getting job extension.
+[2026-08-20 09:05:40Z INFO JobRunner] Initialize job. Getting all job steps.
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.credentials'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known config file 'SetupInfo': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\.setup_info'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:40Z INFO PipelineDirectoryManager] Loading tracking config if exists: C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_PipelineMapping\Palak2702/ai-platform-devops\PipelineFolder.json
+[2026-08-20 09:05:40Z INFO PipelineDirectoryManager] Updating job run properties.
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:40Z INFO JobExtension] Downloading actions
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions'
+[2026-08-20 09:05:40Z INFO Worker] Listening for cancel message from the channel.
+[2026-08-20 09:05:40Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2026-08-20 09:05:41Z INFO ResultServer] Successfully started websocket client.
+[2026-08-20 09:05:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '49286741-fc29-4211-bf9f-52a9cf5d3c21', success rate: 1/1.
+[2026-08-20 09:05:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:41Z INFO HostContext] Well known directory 'Actions': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions'
+[2026-08-20 09:05:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:41Z INFO HostContext] Well known directory 'Actions': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions'
+[2026-08-20 09:05:41Z INFO ActionManager] Save archive 'https://codeload.github.com/actions/checkout/zip/11d5960a326750d5838078e36cf38b85af677262' into C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions\_temp_2c2fe510-5a1a-47f5-9af2-c6f346a5b9d3\b17a9eee-acc2-4450-a3bd-2c94c0ccc19d.zip.
+[2026-08-20 09:05:41Z INFO ActionManager] Using Basic token for action archive download.
+[2026-08-20 09:05:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '49286741-fc29-4211-bf9f-52a9cf5d3c21', success rate: 1/1.
+[2026-08-20 09:05:41Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2026-08-20 09:05:42Z INFO ActionManager] Request URL: https://codeload.github.com/actions/checkout/zip/11d5960a326750d5838078e36cf38b85af677262 X-GitHub-Request-Id: FE1A:1C5AE1:1C28E:1B567A:6A86C365 Http Status: OK
+[2026-08-20 09:05:42Z INFO ActionManager] Finished getting action repository.
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Actions': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions'
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2026-08-20 09:05:42Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Actions': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions'
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 101,
+          "col": 3,
+          "lit": "allow-unsafe-pr-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 109,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-08-20 09:05:42Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Actions': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions'
+[2026-08-20 09:05:42Z INFO ActionManager] Load action that reference repository from 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions\actions\checkout\v4'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Actions': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions'
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 101,
+          "col": 3,
+          "lit": "allow-unsafe-pr-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 109,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-08-20 09:05:42Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-08-20 09:05:42Z INFO ActionManager] Action node.js file: dist/index.js.
+[2026-08-20 09:05:42Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2026-08-20 09:05:42Z INFO JobExtension] Adding .
+[2026-08-20 09:05:42Z INFO JobExtension] Adding .
+[2026-08-20 09:05:42Z INFO JobExtension] Adding .
+[2026-08-20 09:05:42Z INFO JobExtension] Adding .
+[2026-08-20 09:05:42Z INFO JobExtension] Adding .
+[2026-08-20 09:05:42Z INFO JobExtension] Adding .
+[2026-08-20 09:05:42Z INFO JobExtension] Adding .
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO JobServerQueue] Try to append 1 batches web console lines for record '49286741-fc29-4211-bf9f-52a9cf5d3c21', success rate: 1/1.
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO JobExtension] Total accessible running process: 271.
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:42Z INFO JobExtension] Start checking server connectivity.
+[2026-08-20 09:05:42Z INFO JobExtension] Check server connectivity for https://broker.actions.githubusercontent.com/health.
+[2026-08-20 09:05:42Z INFO JobExtension] Check server connectivity for https://token.actions.githubusercontent.com/ready.
+[2026-08-20 09:05:42Z INFO JobExtension] Check server connectivity for https://run.actions.githubusercontent.com/health.
+[2026-08-20 09:05:42Z INFO JobExtension] Start checking service connectivity in background.
+[2026-08-20 09:05:42Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "49286741-fc29-4211-bf9f-52a9cf5d3c21",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2026-08-20T09:05:40.5800437Z",
+  "finishTime": "2026-08-20T09:05:42.85401Z"
+}.
+[2026-08-20 09:05:42Z INFO JobRunner] Total job steps: 7.
+[2026-08-20 09:05:42Z INFO JobRunner] Run all job steps.
+[2026-08-20 09:05:42Z INFO DapDebugger] DapDebugger initialized
+[2026-08-20 09:05:42Z INFO StepsRunner] Processing step: DisplayName='Checkout repository'
+[2026-08-20 09:05:42Z INFO StepsRunner] Evaluating: success()
+[2026-08-20 09:05:42Z INFO StepsRunner] Result: true
+[2026-08-20 09:05:42Z INFO StepsRunner] Starting the step.
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:42Z INFO StepsRunner] Which2: 'chcp'
+[2026-08-20 09:05:42Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper] Process started with process id 17812, waiting for process exit.
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:42Z INFO ProcessInvokerWrapper] Finished process 17812 with exit code 0, and elapsed time 00:00:00.0184201.
+[2026-08-20 09:05:42Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Actions': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions'
+[2026-08-20 09:05:42Z INFO ActionManager] Load action that reference repository from 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions\actions\checkout\v4'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Actions': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions'
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 101,
+          "col": 3,
+          "lit": "allow-unsafe-pr-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 109,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-08-20 09:05:42Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-08-20 09:05:42Z INFO ActionManager] Action node.js file: dist/index.js.
+[2026-08-20 09:05:42Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2026-08-20 09:05:42Z INFO ExecutionContext] Reserve record order 9 to 16 for post job actions.
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:42Z INFO ExecutionContext] Write event payload to C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:42Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:42Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateArtifactsFileCommand, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ArtifactsListFileCommand, Runner.Worker
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "Palak2702/ai-platform-devops"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'ref': default value evaluate result: ""
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'ssh-key': default value evaluate result: ""
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'ssh-known-hosts': default value evaluate result: ""
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'ssh-user': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 51,
+  "col": 14,
+  "lit": "git"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 54,
+  "col": 14,
+  "lit": "true"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'path': default value evaluate result: ""
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 59,
+  "col": 14,
+  "lit": "true"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": ""
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": ""
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 76,
+  "col": 14,
+  "lit": "1"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 79,
+  "col": 14,
+  "lit": "false"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "true"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "false"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 94,
+  "col": 14,
+  "lit": "false"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 97,
+  "col": 14,
+  "lit": "true"
+}
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'github-server-url': default value evaluate result: ""
+[2026-08-20 09:05:42Z INFO ActionManifestManagerLegacy] Input 'allow-unsafe-pr-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 109,
+  "col": 14,
+  "lit": "false"
+}
+[2026-08-20 09:05:42Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command error
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command group
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-08-20 09:05:42Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-08-20 09:05:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:43Z INFO HostContext] Well known directory 'Externals': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\externals'
+[2026-08-20 09:05:43Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:43Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\externals\node24\bin\node.exe'
+[2026-08-20 09:05:43Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2026-08-20 09:05:43Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\ai-platform-devops\ai-platform-devops'
+[2026-08-20 09:05:43Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:43Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2026-08-20 09:05:43Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:43Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:43Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:43Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:43Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:43Z INFO ProcessInvokerWrapper] Process started with process id 7384, waiting for process exit.
+[2026-08-20 09:05:43Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3ea5d8da-4ce9-4892-95b1-73cb9705d815', success rate: 1/1.
+[2026-08-20 09:05:43Z INFO AddMaskCommandExtension] Add new secret mask with length of 524
+[2026-08-20 09:05:43Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-20 09:05:43Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag\blocks\504f5842-ba72-493d-9ed8-ae75df2fd470_49286741-fc29-4211-bf9f-52a9cf5d3c21.1
+[2026-08-20 09:05:43Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-08-20 09:05:43Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3ea5d8da-4ce9-4892-95b1-73cb9705d815', success rate: 1/1.
+[2026-08-20 09:05:43Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3ea5d8da-4ce9-4892-95b1-73cb9705d815', success rate: 1/1.
+[2026-08-20 09:05:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3ea5d8da-4ce9-4892-95b1-73cb9705d815', success rate: 1/1.
+[2026-08-20 09:05:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3ea5d8da-4ce9-4892-95b1-73cb9705d815', success rate: 1/1.
+[2026-08-20 09:05:45Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-08-20 09:05:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3ea5d8da-4ce9-4892-95b1-73cb9705d815', success rate: 1/1.
+[2026-08-20 09:05:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3ea5d8da-4ce9-4892-95b1-73cb9705d815', success rate: 1/1.
+[2026-08-20 09:05:47Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3ea5d8da-4ce9-4892-95b1-73cb9705d815', success rate: 1/1.
+[2026-08-20 09:05:47Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3ea5d8da-4ce9-4892-95b1-73cb9705d815', success rate: 1/1.
+[2026-08-20 09:05:48Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3ea5d8da-4ce9-4892-95b1-73cb9705d815', success rate: 1/1.
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper] Finished process 7384 with exit code 0, and elapsed time 00:00:05.9036428.
+[2026-08-20 09:05:48Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_runner_file_commands\step_summary_dcbac35a-a8b1-4e65-9688-95c281145e11) is empty; skipping attachment upload
+[2026-08-20 09:05:48Z INFO StepsRunner] Step result: 
+[2026-08-20 09:05:48Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node24",
+  "stage": "Main",
+  "stepId": "3ea5d8da-4ce9-4892-95b1-73cb9705d815",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 7,
+  "startTime": "2026-08-20T09:05:42.8867618Z",
+  "finishTime": "2026-08-20T09:05:48.9313639Z"
+}.
+[2026-08-20 09:05:48Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-08-20 09:05:48Z INFO StepsRunner] Current state: job state = ''
+[2026-08-20 09:05:48Z INFO StepsRunner] Processing step: DisplayName='Check Kubernetes'
+[2026-08-20 09:05:48Z INFO StepsRunner] Evaluating: success()
+[2026-08-20 09:05:48Z INFO StepsRunner] Result: true
+[2026-08-20 09:05:48Z INFO StepsRunner] Starting the step.
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:48Z INFO StepsRunner] Which2: 'chcp'
+[2026-08-20 09:05:48Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper] Process started with process id 1424, waiting for process exit.
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper] Finished process 1424 with exit code 0, and elapsed time 00:00:00.0139398.
+[2026-08-20 09:05:48Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:48Z INFO ExecutionContext] Write event payload to C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:48Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-08-20 09:05:48Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command error
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command group
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-08-20 09:05:48Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-08-20 09:05:48Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-08-20 09:05:48Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-08-20 09:05:48Z INFO ScriptHandler] Defaulting to powershell
+[2026-08-20 09:05:48Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-20 09:05:48Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:48Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:48Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-08-20 09:05:48Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-08-20 09:05:48Z INFO ScriptHandler] Defaulting to powershell
+[2026-08-20 09:05:48Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-20 09:05:48Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\c547ccfe-e419-4353-acf7-01dc96f52dd7.ps1'"'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\ai-platform-devops\ai-platform-devops'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:48Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:49Z INFO ProcessInvokerWrapper] Process started with process id 9520, waiting for process exit.
+[2026-08-20 09:05:49Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3ea5d8da-4ce9-4892-95b1-73cb9705d815', success rate: 1/1.
+[2026-08-20 09:05:49Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7e9ce770-ce3c-4056-99d8-23ef2e49752b', success rate: 1/1.
+[2026-08-20 09:05:49Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-08-20 09:05:49Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-20 09:05:49Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag\blocks\504f5842-ba72-493d-9ed8-ae75df2fd470_3ea5d8da-4ce9-4892-95b1-73cb9705d815.1
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper] Finished process 9520 with exit code 0, and elapsed time 00:00:01.3812852.
+[2026-08-20 09:05:50Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_runner_file_commands\step_summary_eb90434f-a37e-4e6e-ae0a-28ac896906c6) is empty; skipping attachment upload
+[2026-08-20 09:05:50Z INFO StepsRunner] Step result: 
+[2026-08-20 09:05:50Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "7e9ce770-ce3c-4056-99d8-23ef2e49752b",
+  "stepContextName": "__run",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2026-08-20T09:05:48.9331647Z",
+  "finishTime": "2026-08-20T09:05:50.3696373Z"
+}.
+[2026-08-20 09:05:50Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-08-20 09:05:50Z INFO StepsRunner] Current state: job state = ''
+[2026-08-20 09:05:50Z INFO StepsRunner] Processing step: DisplayName='Check Helm'
+[2026-08-20 09:05:50Z INFO StepsRunner] Evaluating: success()
+[2026-08-20 09:05:50Z INFO StepsRunner] Result: true
+[2026-08-20 09:05:50Z INFO StepsRunner] Starting the step.
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:50Z INFO StepsRunner] Which2: 'chcp'
+[2026-08-20 09:05:50Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper] Process started with process id 16828, waiting for process exit.
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper] Finished process 16828 with exit code 0, and elapsed time 00:00:00.0148265.
+[2026-08-20 09:05:50Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:50Z INFO ExecutionContext] Write event payload to C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:50Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-08-20 09:05:50Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command error
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command group
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-08-20 09:05:50Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-08-20 09:05:50Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-08-20 09:05:50Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-08-20 09:05:50Z INFO ScriptHandler] Defaulting to powershell
+[2026-08-20 09:05:50Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-20 09:05:50Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:50Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:50Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-08-20 09:05:50Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7e9ce770-ce3c-4056-99d8-23ef2e49752b', success rate: 1/1.
+[2026-08-20 09:05:50Z INFO JobServerQueue] Try to append 1 batches web console lines for record '5d3bc7fe-eccc-45b3-961c-2d7f081dc535', success rate: 1/1.
+[2026-08-20 09:05:50Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-08-20 09:05:50Z INFO ScriptHandler] Defaulting to powershell
+[2026-08-20 09:05:50Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-20 09:05:50Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\cf6772bc-8243-461b-b713-53846314e386.ps1'"'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\ai-platform-devops\ai-platform-devops'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:50Z INFO ProcessInvokerWrapper] Process started with process id 10708, waiting for process exit.
+[2026-08-20 09:05:50Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-08-20 09:05:50Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-08-20 09:05:51Z INFO JobServerQueue] Try to append 1 batches web console lines for record '5d3bc7fe-eccc-45b3-961c-2d7f081dc535', success rate: 1/1.
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper] Finished process 10708 with exit code 0, and elapsed time 00:00:01.1888241.
+[2026-08-20 09:05:51Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_runner_file_commands\step_summary_49adc384-4d0b-48b1-9ed0-05195cb3a745) is empty; skipping attachment upload
+[2026-08-20 09:05:51Z INFO StepsRunner] Step result: 
+[2026-08-20 09:05:51Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "5d3bc7fe-eccc-45b3-961c-2d7f081dc535",
+  "stepContextName": "__run_2",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2026-08-20T09:05:50.3706582Z",
+  "finishTime": "2026-08-20T09:05:51.6029458Z"
+}.
+[2026-08-20 09:05:51Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-08-20 09:05:51Z INFO StepsRunner] Current state: job state = ''
+[2026-08-20 09:05:51Z INFO StepsRunner] Processing step: DisplayName='Check Kind cluster'
+[2026-08-20 09:05:51Z INFO StepsRunner] Evaluating: success()
+[2026-08-20 09:05:51Z INFO StepsRunner] Result: true
+[2026-08-20 09:05:51Z INFO StepsRunner] Starting the step.
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:51Z INFO StepsRunner] Which2: 'chcp'
+[2026-08-20 09:05:51Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper] Process started with process id 18228, waiting for process exit.
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper] Finished process 18228 with exit code 0, and elapsed time 00:00:00.0189187.
+[2026-08-20 09:05:51Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:51Z INFO ExecutionContext] Write event payload to C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:51Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-08-20 09:05:51Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command error
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command group
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-08-20 09:05:51Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-08-20 09:05:51Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-08-20 09:05:51Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-08-20 09:05:51Z INFO ScriptHandler] Defaulting to powershell
+[2026-08-20 09:05:51Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-20 09:05:51Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:51Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:51Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-08-20 09:05:51Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-08-20 09:05:51Z INFO ScriptHandler] Defaulting to powershell
+[2026-08-20 09:05:51Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-20 09:05:51Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\d0910a10-1069-49cf-a6c0-edeb416e933e.ps1'"'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\ai-platform-devops\ai-platform-devops'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:51Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-08-20 09:05:51Z INFO ProcessInvokerWrapper] Process started with process id 1252, waiting for process exit.
+[2026-08-20 09:05:51Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6c30fbe3-e791-40b8-9c2a-31e6e8f1faed', success rate: 1/1.
+[2026-08-20 09:05:51Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-20 09:05:51Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag\blocks\504f5842-ba72-493d-9ed8-ae75df2fd470_7e9ce770-ce3c-4056-99d8-23ef2e49752b.1
+[2026-08-20 09:05:52Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-20 09:05:52Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag\blocks\504f5842-ba72-493d-9ed8-ae75df2fd470_5d3bc7fe-eccc-45b3-961c-2d7f081dc535.1
+[2026-08-20 09:05:52Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6c30fbe3-e791-40b8-9c2a-31e6e8f1faed', success rate: 1/1.
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper] Finished process 1252 with exit code 0, and elapsed time 00:00:01.1914654.
+[2026-08-20 09:05:52Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_runner_file_commands\step_summary_24f98462-e91d-464a-a71c-6dd1f8d9531b) is empty; skipping attachment upload
+[2026-08-20 09:05:52Z INFO StepsRunner] Step result: 
+[2026-08-20 09:05:52Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "6c30fbe3-e791-40b8-9c2a-31e6e8f1faed",
+  "stepContextName": "__run_3",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2026-08-20T09:05:51.603937Z",
+  "finishTime": "2026-08-20T09:05:52.8484394Z"
+}.
+[2026-08-20 09:05:52Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-08-20 09:05:52Z INFO StepsRunner] Current state: job state = ''
+[2026-08-20 09:05:52Z INFO StepsRunner] Processing step: DisplayName='Helm lint'
+[2026-08-20 09:05:52Z INFO StepsRunner] Evaluating: success()
+[2026-08-20 09:05:52Z INFO StepsRunner] Result: true
+[2026-08-20 09:05:52Z INFO StepsRunner] Starting the step.
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:52Z INFO StepsRunner] Which2: 'chcp'
+[2026-08-20 09:05:52Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper] Process started with process id 16532, waiting for process exit.
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper] Finished process 16532 with exit code 0, and elapsed time 00:00:00.0231973.
+[2026-08-20 09:05:52Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:52Z INFO ExecutionContext] Write event payload to C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:52Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-08-20 09:05:52Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command error
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command group
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-08-20 09:05:52Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-08-20 09:05:52Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-08-20 09:05:52Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-08-20 09:05:52Z INFO ScriptHandler] Defaulting to powershell
+[2026-08-20 09:05:52Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-20 09:05:52Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:52Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:52Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-08-20 09:05:52Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-08-20 09:05:52Z INFO ScriptHandler] Defaulting to powershell
+[2026-08-20 09:05:52Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-20 09:05:52Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\669299f3-3680-47ce-8f2f-7784ab7b23ec.ps1'"'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\ai-platform-devops\ai-platform-devops'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:52Z INFO ProcessInvokerWrapper] Process started with process id 9484, waiting for process exit.
+[2026-08-20 09:05:52Z INFO JobServerQueue] Try to append 1 batches web console lines for record '00401bd1-c256-4034-a166-300838de73e0', success rate: 1/1.
+[2026-08-20 09:05:53Z INFO JobServerQueue] Tried to upload 2 file(s) to results, success rate: 2/2.
+[2026-08-20 09:05:53Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper] Finished process 9484 with exit code 0, and elapsed time 00:00:01.3444504.
+[2026-08-20 09:05:54Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_runner_file_commands\step_summary_cbe62f07-4550-41d5-b0db-b79d72aaa463) is empty; skipping attachment upload
+[2026-08-20 09:05:54Z INFO StepsRunner] Step result: 
+[2026-08-20 09:05:54Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "00401bd1-c256-4034-a166-300838de73e0",
+  "stepContextName": "__run_4",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2026-08-20T09:05:52.849724Z",
+  "finishTime": "2026-08-20T09:05:54.2438551Z"
+}.
+[2026-08-20 09:05:54Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-08-20 09:05:54Z INFO StepsRunner] Current state: job state = ''
+[2026-08-20 09:05:54Z INFO StepsRunner] Processing step: DisplayName='Deploy application'
+[2026-08-20 09:05:54Z INFO StepsRunner] Evaluating: success()
+[2026-08-20 09:05:54Z INFO StepsRunner] Result: true
+[2026-08-20 09:05:54Z INFO StepsRunner] Starting the step.
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:54Z INFO StepsRunner] Which2: 'chcp'
+[2026-08-20 09:05:54Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper] Process started with process id 18680, waiting for process exit.
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper] Finished process 18680 with exit code 0, and elapsed time 00:00:00.0136031.
+[2026-08-20 09:05:54Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:54Z INFO ExecutionContext] Write event payload to C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:54Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-08-20 09:05:54Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command error
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command group
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-08-20 09:05:54Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-08-20 09:05:54Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-08-20 09:05:54Z INFO JobServerQueue] Try to append 1 batches web console lines for record '00401bd1-c256-4034-a166-300838de73e0', success rate: 1/1.
+[2026-08-20 09:05:54Z INFO JobServerQueue] Try to append 1 batches web console lines for record '11cacd14-a18d-42f7-8ece-326c0a931a6b', success rate: 1/1.
+[2026-08-20 09:05:54Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-08-20 09:05:54Z INFO ScriptHandler] Defaulting to powershell
+[2026-08-20 09:05:54Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-20 09:05:54Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:54Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:54Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-08-20 09:05:54Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-08-20 09:05:54Z INFO ScriptHandler] Defaulting to powershell
+[2026-08-20 09:05:54Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-20 09:05:54Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\1453dfa3-7911-4caa-8831-21d89d97e670.ps1'"'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\ai-platform-devops\ai-platform-devops'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:54Z INFO ProcessInvokerWrapper] Process started with process id 18880, waiting for process exit.
+[2026-08-20 09:05:54Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-20 09:05:54Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag\blocks\504f5842-ba72-493d-9ed8-ae75df2fd470_6c30fbe3-e791-40b8-9c2a-31e6e8f1faed.1
+[2026-08-20 09:05:54Z INFO JobServerQueue] Try to append 1 batches web console lines for record '11cacd14-a18d-42f7-8ece-326c0a931a6b', success rate: 1/1.
+[2026-08-20 09:05:54Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-08-20 09:05:55Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-20 09:05:55Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag\blocks\504f5842-ba72-493d-9ed8-ae75df2fd470_00401bd1-c256-4034-a166-300838de73e0.1
+[2026-08-20 09:05:56Z INFO JobServerQueue] Tried to upload 2 file(s) to results, success rate: 2/2.
+[2026-08-20 09:05:56Z INFO JobServerQueue] Try to append 1 batches web console lines for record '11cacd14-a18d-42f7-8ece-326c0a931a6b', success rate: 1/1.
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper] Finished process 18880 with exit code 0, and elapsed time 00:00:02.2070573.
+[2026-08-20 09:05:56Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_runner_file_commands\step_summary_3589e287-6ee2-44b7-bec1-4fa2daaa2286) is empty; skipping attachment upload
+[2026-08-20 09:05:56Z INFO StepsRunner] Step result: 
+[2026-08-20 09:05:56Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "11cacd14-a18d-42f7-8ece-326c0a931a6b",
+  "stepContextName": "__run_5",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2026-08-20T09:05:54.2452748Z",
+  "finishTime": "2026-08-20T09:05:56.5048941Z"
+}.
+[2026-08-20 09:05:56Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-08-20 09:05:56Z INFO StepsRunner] Current state: job state = ''
+[2026-08-20 09:05:56Z INFO StepsRunner] Processing step: DisplayName='Verify deployment'
+[2026-08-20 09:05:56Z INFO StepsRunner] Evaluating: success()
+[2026-08-20 09:05:56Z INFO StepsRunner] Result: true
+[2026-08-20 09:05:56Z INFO StepsRunner] Starting the step.
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:56Z INFO StepsRunner] Which2: 'chcp'
+[2026-08-20 09:05:56Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper] Process started with process id 14060, waiting for process exit.
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper] Finished process 14060 with exit code 0, and elapsed time 00:00:00.0163186.
+[2026-08-20 09:05:56Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:56Z INFO ExecutionContext] Write event payload to C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:56Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-08-20 09:05:56Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command error
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command group
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-08-20 09:05:56Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-08-20 09:05:56Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-08-20 09:05:56Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-08-20 09:05:56Z INFO ScriptHandler] Defaulting to powershell
+[2026-08-20 09:05:56Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-20 09:05:56Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:56Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:56Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-08-20 09:05:56Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-08-20 09:05:56Z INFO ScriptHandler] Defaulting to powershell
+[2026-08-20 09:05:56Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-20 09:05:56Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\2904ba66-09b2-47f4-8602-274c2e1e755a.ps1'"'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\ai-platform-devops\ai-platform-devops'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:56Z INFO ProcessInvokerWrapper] Process started with process id 1492, waiting for process exit.
+[2026-08-20 09:05:56Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ae579af7-26e7-40e4-bdf3-0bf3662886ad', success rate: 1/1.
+[2026-08-20 09:05:56Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-08-20 09:05:57Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-20 09:05:57Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag\blocks\504f5842-ba72-493d-9ed8-ae75df2fd470_11cacd14-a18d-42f7-8ece-326c0a931a6b.1
+[2026-08-20 09:05:57Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ae579af7-26e7-40e4-bdf3-0bf3662886ad', success rate: 1/1.
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper] Finished process 1492 with exit code 0, and elapsed time 00:00:01.1949839.
+[2026-08-20 09:05:57Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_runner_file_commands\step_summary_4d6d4281-519e-4cb7-b858-77c0336fabca) is empty; skipping attachment upload
+[2026-08-20 09:05:57Z INFO StepsRunner] Step result: 
+[2026-08-20 09:05:57Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "ae579af7-26e7-40e4-bdf3-0bf3662886ad",
+  "stepContextName": "__run_6",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2026-08-20T09:05:56.5062105Z",
+  "finishTime": "2026-08-20T09:05:57.7516108Z"
+}.
+[2026-08-20 09:05:57Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-08-20 09:05:57Z INFO StepsRunner] Current state: job state = ''
+[2026-08-20 09:05:57Z INFO StepsRunner] Processing step: DisplayName='Post Checkout repository'
+[2026-08-20 09:05:57Z INFO StepsRunner] Evaluating: always()
+[2026-08-20 09:05:57Z INFO StepsRunner] Result: true
+[2026-08-20 09:05:57Z INFO StepsRunner] Starting the step.
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:57Z INFO StepsRunner] Which2: 'chcp'
+[2026-08-20 09:05:57Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper] Process started with process id 4996, waiting for process exit.
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper] Finished process 4996 with exit code 0, and elapsed time 00:00:00.0122967.
+[2026-08-20 09:05:57Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Actions': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions'
+[2026-08-20 09:05:57Z INFO ActionManager] Load action that reference repository from 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions\actions\checkout\v4'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Actions': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions'
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 101,
+          "col": 3,
+          "lit": "allow-unsafe-pr-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 109,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-08-20 09:05:57Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-08-20 09:05:57Z INFO ActionManager] Action node.js file: dist/index.js.
+[2026-08-20 09:05:57Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:57Z INFO ExecutionContext] Write event payload to C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Work': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Temp': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp'
+[2026-08-20 09:05:57Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "Palak2702/ai-platform-devops"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'ref': default value evaluate result: ""
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'ssh-key': default value evaluate result: ""
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'ssh-known-hosts': default value evaluate result: ""
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'ssh-user': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 51,
+  "col": 14,
+  "lit": "git"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 54,
+  "col": 14,
+  "lit": "true"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'path': default value evaluate result: ""
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 59,
+  "col": 14,
+  "lit": "true"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": ""
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": ""
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 76,
+  "col": 14,
+  "lit": "1"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 79,
+  "col": 14,
+  "lit": "false"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "true"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "false"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 94,
+  "col": 14,
+  "lit": "false"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 97,
+  "col": 14,
+  "lit": "true"
+}
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'github-server-url': default value evaluate result: ""
+[2026-08-20 09:05:57Z INFO ActionManifestManagerLegacy] Input 'allow-unsafe-pr-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 109,
+  "col": 14,
+  "lit": "false"
+}
+[2026-08-20 09:05:57Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command error
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command group
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-08-20 09:05:57Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:05:57Z INFO HostContext] Well known directory 'Externals': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\externals'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\externals\node24\bin\node.exe'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\ai-platform-devops\ai-platform-devops'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-20 09:05:57Z INFO ProcessInvokerWrapper] Process started with process id 9148, waiting for process exit.
+[2026-08-20 09:05:57Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3e07bec8-67da-4016-869e-6fb892ce6e40', success rate: 1/1.
+[2026-08-20 09:05:58Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2026-08-20 09:05:58Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3e07bec8-67da-4016-869e-6fb892ce6e40', success rate: 1/1.
+[2026-08-20 09:05:58Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-08-20 09:05:58Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-08-20 09:05:58Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3e07bec8-67da-4016-869e-6fb892ce6e40', success rate: 1/1.
+[2026-08-20 09:05:59Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-20 09:05:59Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag\blocks\504f5842-ba72-493d-9ed8-ae75df2fd470_ae579af7-26e7-40e4-bdf3-0bf3662886ad.1
+[2026-08-20 09:05:59Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3e07bec8-67da-4016-869e-6fb892ce6e40', success rate: 1/1.
+[2026-08-20 09:05:59Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3e07bec8-67da-4016-869e-6fb892ce6e40', success rate: 1/1.
+[2026-08-20 09:06:00Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-08-20 09:06:00Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:06:00Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-20 09:06:00Z INFO ProcessInvokerWrapper] Finished process 9148 with exit code 0, and elapsed time 00:00:02.7728555.
+[2026-08-20 09:06:00Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp\_runner_file_commands\step_summary_4a69cf20-ebeb-49a0-932d-f3bf83409394) is empty; skipping attachment upload
+[2026-08-20 09:06:00Z INFO StepsRunner] Step result: 
+[2026-08-20 09:06:00Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node24",
+  "stage": "Post",
+  "stepId": "3e07bec8-67da-4016-869e-6fb892ce6e40",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2026-08-20T09:05:57.7558586Z",
+  "finishTime": "2026-08-20T09:06:00.5597461Z"
+}.
+[2026-08-20 09:06:00Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-08-20 09:06:00Z INFO StepsRunner] Current state: job state = ''
+[2026-08-20 09:06:00Z INFO JobRunner] Finalize job.
+[2026-08-20 09:06:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:06:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:06:00Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:06:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:06:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:06:00Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:06:00Z INFO JobExtension] Initialize Env context
+[2026-08-20 09:06:00Z INFO JobExtension] Initialize steps context
+[2026-08-20 09:06:00Z INFO JobExtension] Total accessible running process: 269.
+[2026-08-20 09:06:00Z INFO JobExtension] Wait for all connectivity checks to finish.
+[2026-08-20 09:06:00Z INFO JobExtension] Connectivity check result: {
+  "endpointUrl": "https://broker.actions.githubusercontent.com/health",
+  "endpointIPs": null,
+  "startTime": "2026-08-20T09:05:42.8459331Z",
+  "statusCode": "http_OK",
+  "requestId": "FE1B:163EBF:12280EE:12D62E0:6A86C367",
+  "httpRequestDurationInMs": 775,
+  "dnsResolutionDurationInMs": 0,
+  "dnsError": null
+}
+[2026-08-20 09:06:00Z INFO JobExtension] Connectivity check result: {
+  "endpointUrl": "https://token.actions.githubusercontent.com/ready",
+  "endpointIPs": null,
+  "startTime": "2026-08-20T09:05:42.8483366Z",
+  "statusCode": "http_NoContent",
+  "requestId": "FE1D:2759F9:EC3B74:10A9F53:6A86C367",
+  "httpRequestDurationInMs": 799,
+  "dnsResolutionDurationInMs": 0,
+  "dnsError": null
+}
+[2026-08-20 09:06:00Z INFO JobExtension] Connectivity check result: {
+  "endpointUrl": "https://run.actions.githubusercontent.com/health",
+  "endpointIPs": null,
+  "startTime": "2026-08-20T09:05:42.8496673Z",
+  "statusCode": "http_OK",
+  "requestId": "FE1C:34E8F4:1251B2D:129A34D:6A86C367",
+  "httpRequestDurationInMs": 859,
+  "dnsResolutionDurationInMs": 0,
+  "dnsError": null
+}
+[2026-08-20 09:06:00Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "e8b1d8ed-5a48-4446-b99d-1ffea85b2eec",
+  "result": "succeeded",
+  "errorMessages": [
+    "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/"
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-08-20T09:06:00.5697449Z",
+  "finishTime": "2026-08-20T09:06:00.5848993Z"
+}.
+[2026-08-20 09:06:00Z INFO JobRunner] Job result after all job steps finish: Succeeded
+[2026-08-20 09:06:00Z INFO JobRunner] Completing the job execution context.
+[2026-08-20 09:06:00Z INFO JobRunner] Shutting down the job server queue.
+[2026-08-20 09:06:00Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2026-08-20 09:06:01Z INFO JobServerQueue] All queue process task stopped.
+[2026-08-20 09:06:01Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e8b1d8ed-5a48-4446-b99d-1ffea85b2eec', success rate: 1/1.
+[2026-08-20 09:06:01Z INFO JobServerQueue] Web console line queue drained.
+[2026-08-20 09:06:01Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2026-08-20 09:06:01Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2026-08-20 09:06:01Z INFO JobServerQueue] File upload queue drained.
+[2026-08-20 09:06:01Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-08-20 09:06:01Z INFO JobServerQueue] Uploading 3 file(s) in one shot through results service.
+[2026-08-20 09:06:01Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-20 09:06:01Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag\blocks\504f5842-ba72-493d-9ed8-ae75df2fd470_3e07bec8-67da-4016-869e-6fb892ce6e40.1
+[2026-08-20 09:06:01Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-20 09:06:01Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag\blocks\504f5842-ba72-493d-9ed8-ae75df2fd470_e8b1d8ed-5a48-4446-b99d-1ffea85b2eec.1
+[2026-08-20 09:06:02Z INFO JobServerQueue] Got a job log file to send to results service.
+[2026-08-20 09:06:02Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag\blocks\504f5842-ba72-493d-9ed8-ae75df2fd470_de238cd2-e06a-563e-868f-0e60d1cf7e19.1
+[2026-08-20 09:06:03Z INFO JobServerQueue] Tried to upload 3 file(s) to results, success rate: 3/3.
+[2026-08-20 09:06:03Z INFO JobServerQueue] Results upload queue drained.
+[2026-08-20 09:06:03Z INFO JobServerQueue] Timeline update queue drained.
+[2026-08-20 09:06:03Z INFO JobServerQueue] Disposing job server ...
+[2026-08-20 09:06:03Z INFO JobServerQueue] Disposing results server ...
+[2026-08-20 09:06:03Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2026-08-20 09:06:03Z INFO TempDirectoryManager] Cleaning runner temp folder: C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_work\_temp
+[2026-08-20 09:06:03Z INFO HostContext] Well known directory 'Bin': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\bin'
+[2026-08-20 09:06:03Z INFO HostContext] Well known directory 'Root': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner'
+[2026-08-20 09:06:03Z INFO HostContext] Well known directory 'Diag': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag'
+[2026-08-20 09:06:03Z INFO HostContext] Well known config file 'Telemetry': 'C:\Users\qd2580\learnings -Projects\ai-platform-devops\actions-runner\_diag\.telemetry'
+[2026-08-20 09:06:03Z INFO JobRunner] Raising job completed against run service
+[2026-08-20 09:06:04Z INFO Worker] Job completed.

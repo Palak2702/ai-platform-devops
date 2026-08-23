@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 2,
+  "agentName": "QDS-IT-PALAK",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/WM8My6qV6Ov3ee815KjQl14aRpWd8xxEkmAOY9qIKJbDtr1V4M/",
+  "gitHubUrl": "https://github.com/Palak2702/ai-platform-devops",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}
